@@ -11,7 +11,6 @@ import java.util.Scanner;
 @Controller
 public class InvoiceControllerWeb implements InvoiceControllerInterface {
 
-
     @Autowired
     private InvoiceServiceInterface invoiceService;
 

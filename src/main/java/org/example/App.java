@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.controller.InvoiceControllerInterface;
+import org.example.controller.web.InvoiceControllerWeb;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -45,6 +46,8 @@ public class App {
         InvoiceControllerInterface invoiceController = context.getBean(InvoiceControllerInterface.class);
 
         invoiceController.createInvoice();
+
+        // SCANNER
         Scanner sc = new Scanner(System.in);
         System.out.println("Would you like to create another invoice? (y/n)");
         String answer = sc.nextLine();
