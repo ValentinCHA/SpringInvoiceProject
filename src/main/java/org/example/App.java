@@ -3,6 +3,7 @@ package org.example;
 import org.example.controller.InvoiceControllerInterface;
 import org.example.controller.web.InvoiceControllerWeb;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Scanner;
@@ -42,7 +43,8 @@ public class App {
         invoiceService.setInvoiceRepository(invoiceRepository);
         invoiceController.setInvoiceService(invoiceService); */
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        //ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         InvoiceControllerInterface invoiceController = context.getBean(InvoiceControllerInterface.class);
 
         invoiceController.createInvoice();
